@@ -82,7 +82,7 @@ commands:
           name: "Install bazelisk for compiling onos"
           command: |
             curl -L -o bazelisk << parameters.url >>
-            chmod +x bazelisk && mv bazelisk /usr/bin
+            chmod +x bazelisk && sudo mv bazelisk /usr/bin
 jobs:
   buildx:
     working_directory: ~/onos-multiarch

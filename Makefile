@@ -3,8 +3,6 @@ ONOS_VERSION=2.4.0
 VERSION = $(shell cat VERSION)
 BINFMT = a7996909642ee92942dcd6cff44b9b95f08dad64
 REPO = onos-multiarch
-DOCKER_USER=thanhledev
-DOCKER_PASS=5174l0rD
 
 .PHONY: all init build clean
 

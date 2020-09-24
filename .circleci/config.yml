@@ -76,7 +76,7 @@ commands:
       - run:
           name: "Install bazelisk for compiling onos"
           command: |
-            curl -L -o https://github.com/bazelbuild/bazelisk/releases/download/v1.5.0/bazelisk-linux-amd64
+            wget https://github.com/bazelbuild/bazelisk/releases/download/v1.5.0/bazelisk-linux-amd64
             chmod +x bazelisk && mv bazelisk /usr/bin
 jobs:
   buildx:

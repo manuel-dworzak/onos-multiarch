@@ -81,7 +81,7 @@ commands:
       - run:
           name: "Install bazelisk for compiling onos"
           command: |
-            curl -L -o << parameters.url >>
+            curl -L -o "<< parameters.url >>"
             chmod +x bazelisk && mv bazelisk /usr/bin
 jobs:
   buildx:

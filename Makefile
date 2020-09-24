@@ -1,10 +1,10 @@
-PLATFORMS = linux/amd64,linux/arm64, # linux/arm/v7,linux/ppc64le,linux/s390x will be added when applicable
+PLATFORMS = linux/amd64,linux/arm64 # linux/arm/v7,linux/ppc64le,linux/s390x will be added when applicable
 ONOS_VERSION=2.4.0
 VERSION = $(shell cat VERSION)
 BINFMT = a7996909642ee92942dcd6cff44b9b95f08dad64
 REPO = onos-multiarch
-#DOCKER_USER=thanhledev
-#DOCKER_PASS=5174l0rD
+DOCKER_USER=thanhledev
+DOCKER_PASS=5174l0rD
 
 .PHONY: all init build clean
 
@@ -36,7 +36,7 @@ init: clean
 build:
 	@echo "Build function"
 	#-build onos source code	
-	@cd ./onos && bazelisk build onos --jobs 4 \
+	@cd ./onos && bazel build onos --jobs 4 \
 		  --verbose_failures \
 		  --define profile=default
 	@cp ./onos/bazel-bin/onos.tar.gz .

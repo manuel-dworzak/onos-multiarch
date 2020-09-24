@@ -71,17 +71,12 @@ commands:
             mkdir -p ~/.docker/cli-plugins
             mv docker-buildx ~/.docker/cli-plugins/
             chmod a+x ~/.docker/cli-plugins/docker-buildx
-  install-bazelisk:
-    parameters:
-      url:
-        description: "Install Bazelisk"
-        type: string
-        default: "https://github.com/bazelbuild/bazelisk/releases/download/v1.5.0/bazelisk-linux-amd64"
+  install-bazelisk:    
     steps:
       - run:
           name: "Install bazelisk for compiling onos"
           command: |
-            curl -L -o "<< parameters.url >>"
+            curl -L -o https://github.com/bazelbuild/bazelisk/releases/download/v1.5.0/bazelisk-linux-amd64
             chmod +x bazelisk && mv bazelisk /usr/bin
 jobs:
   buildx:

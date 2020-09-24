@@ -14,7 +14,7 @@ all: init build clean
 init: clean
 	#-we download the onos source code & copy crma application to the required location
 	@echo "Init function"
-	@mkdir -p onos && wget https://github.com/opennetworkinglab/onos/archive/${ONOS_VERSION}.tar.gz && tar xvf ${ONOS_VERSION}.tar.gz -C ./onos --strip-components=1
+	@mkdir -p onos && wget -q https://github.com/opennetworkinglab/onos/archive/${ONOS_VERSION}.tar.gz && tar xf ${ONOS_VERSION}.tar.gz -C ./onos --strip-components=1
 	@cp -r crma ./onos/apps
 	#-edit necessary files
 	@sed -i '/^APP_MAP = /a\    \"//apps/crma:onos-apps-crma-oar": [],' ./onos/tools/build/bazel/modules.bzl

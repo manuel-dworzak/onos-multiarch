@@ -57,11 +57,11 @@ commands:
       version:
         description: "Version of buildx release under << parameters.url >>"
         type: string
-        default: "v0.3.1"
+        default: "v0.4.2"
       artifact:
         description: "Buildx artifact, which should be used"
         type: string
-        default: "buildx-v0.3.1.linux-amd64"
+        default: "buildx-v0.4.2.linux-amd64"
     steps:
       - run:
           name: "Install BuildX plugin for Docker"

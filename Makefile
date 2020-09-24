@@ -34,7 +34,7 @@ init: clean
 build:
 	@echo "Build function"
 	#-build onos source code	
-	@cd ./onos && bazel build onos --jobs 4 \
+	@cd ./onos && bazelisk build onos --jobs 4 \
 		  --verbose_failures \
 		  --define profile=default
 	@cp ./onos/bazel-bin/onos.tar.gz .
